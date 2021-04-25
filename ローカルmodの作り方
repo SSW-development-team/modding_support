@@ -1,0 +1,3 @@
+1.paradoxランチャーからmodを作成する
+2.hoi4のmodフォルダに作成されたdescriptor.modを開く
+3.path = "/Users/名前/Documents/GitHub/SSW_mod" # ""で囲まれた中にgithub desktopのSSW_modへのパスをコピーする

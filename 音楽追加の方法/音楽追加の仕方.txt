@@ -1,0 +1,55 @@
+音楽追加の仕方
+はじめ
+music/xxx.ogg
+のように、ミュージックフォルダ内に音楽をogg形式にして追加する。
+音楽はyoutubeのリンクをコピーして、専用のサイトでmp3かmp4とかに似てダウンロードする。
+専用のサイトは「youtube download」と検索すれば出てくるはず...危ないやつが混じってたりするから気をつけて
+次に
+music/test_music.txt
+の中に
+
+music_station = "SSW_Italian_music" #ミュージックセットの名前を英語で
+
+music = {#肝心の音楽
+	song = "Era_fascista" #名前は英語で空白は作らない
+    chance = {
+        modifier = {
+			factor = 5
+		}	
+	}	
+}
+続いて
+music/test_music.asset に
+music = {
+	name = "Era Fascista"　#曲名
+	file = "Era_fascista.ogg" 音楽ファイルの名前
+	volume = 0.38 #音量
+}
+最後に、
+interface/ssw_music_station_base.guiに
+containerWindowType={
+		name = "SSW_Italian_music_stations_entry" #名前
+		size = { width = 162 height = 130 }
+		
+		checkBoxType = {
+			name = "select_station_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_SSW_music_album_art" #画像スプライト
+			clicksound = decisions_ui_button
+		}
+	}
+これを記述する。
+画像の定義は
+interface/ssw_music_station_base.gfxの中の
+spriteTypes = {
+}
+これの中に、
+
+spriteType = {
+        name = "GFX_SSW_music_album_art" #画像定義
+        texturefile = "gfx/music/SSW_music_album_art.dds" #ファイル定義
+        noOfFrames = 2 #分割画像
+    }
+このように記述する。
+あとはわからん。以上！
+wiki参考

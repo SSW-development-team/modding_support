@@ -1,0 +1,98 @@
+###師団テンプレートの作り方・師団配置の仕方
+
+division_template = {
+
+	name = "Infantry Division" #師団テンプレートの名前 空白があって良い
+
+	regiments = { #戦闘大隊
+
+infantry = { x = 0 y = 0 } #一戦闘大隊
+	infantry = { x = 0 y = 1 } 
+	infantry = { x = 0 y = 2 } # infantryの部分を下にある戦闘大隊
+	infantry = { x = 0 y = 3 } #下にある一覧のものに書き換えると戦闘大隊を変更できます
+	infantry = { x = 0 y = 4 }
+    infantry = { x = 1 y = 0 }
+	infantry = { x = 1 y = 1 } # x・yでテンプレート内での位置を定義できます。詳しくは下にあるやつを参考に
+	infantry = { x = 1 y = 2 }
+	infantry = { x = 1 y = 3 }
+	infantry = { x = 1 y = 4 }
+	}
+
+    support = {#支援中隊
+
+    engineer = { x = 0 y = 0 } #一支援中隊
+
+	}
+	priority = 2 #装備の優先度
+	#0：予備 主に守備隊などに用いる
+	#1：標準 普通の部隊で用いる
+	#2：精鋭　戦車師団など、基本数の少ない部隊に用いる
+}
+
+師団の配置
+units = { #前置
+	division = { #師団全体の定義
+		name = "Infantry Division" #師団の名前
+		location = 11746 #配置するプロヴィンスID
+		division_template = "Infantry Division"#テンプレートと名前が同じでないといけない
+                       #使用するテンプレートの名前
+                       #上記のテンプレートのものを入れる 
+
+        start_experience_factor = 0.2#初期の練度、0～1で表す
+		#詳しくは下記の練度にて
+
+		start_equipment_factor = 1.0 #充足率、0～1で表す
+
+	}
+}
+
+
+テンプレート内での位置
+支援中隊     戦闘大隊
+x=0,y=0　　x=0,y=0  x=1,y=0  x=2,y=0  x=3,y=0  x=4,y=0
+x=0,y=1　　x=0,y=1  x=1,y=1  x=2,y=1  x=3,y=1  x=4,y=1 
+x=0,y=2　　x=0,y=2  x=1,y=2  x=2,y=2  x=3,y=2  x=4,y=2
+x=0,y=3　　x=0,y=3  x=1,y=3  x=2,y=3  x=3,y=3  x=4,y=3
+x=0,y=4　  x=0,y=4  x=1,y=4  x=2,y=4  x=3,y=4  x=4,y=4
+
+（参考:ストラテ人様
+https://stratejin.com/hoi4/mod-making-part2/）
+
+
+戦闘大隊一覧
+•infantry：歩兵
+•cavalry：騎兵
+•artillery_brigade：砲兵
+•motorized：自動車化歩兵
+•mechanized：機械化歩兵
+•light_armor：軽戦車
+•medium_armor：中戦車
+•heavy_armor：重戦車
+•modern_armor：現代戦車
+•mountaineers：山岳兵
+•marine：海兵隊
+•paratrooper：空挺兵
+支援大隊一覧
+•recon：偵察中隊
+•engineer：工兵中隊
+•field_hospital：野戦病院
+•logistics_company：補給中隊
+•military_police：憲兵隊
+•signal_company：通信中隊
+•maintenance_company：整備中隊
+＊上記のものは全て研究が完了している必要がある＊
+
+練度-未確認
+0   新兵
+0.1 訓練済み
+0.2 訓練済み経験値+50%
+0.3 一般兵
+0.4 一般兵経験値+25%
+0.5 一般兵経験値+50%
+0.6 一般兵経験値+75%
+0.7 一般兵経験値+99%
+0.8 熟練兵経験値+25%
+0.9 精鋭
+1  精鋭の経験値マックス
+他のはwiki見て...
+wiki参考
