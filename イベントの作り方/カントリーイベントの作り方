@@ -1,0 +1,71 @@
+まずはじめに、
+add_namespace = ###SSW_ITA###
+###で囲まれた部分にこのイベントをファイル内で使用するidを作ろう
+###SSW_担当国家のタグ、とかがおすすめ
+###コマンドで発動させるイベント
+country_event = {
+    id = SSW_ITA.1 #イベントのid
+	immediate = {#ログ
+		log = "[GetDateText]: [Root.GetName]: event SSW_ITA.1"
+	}
+	title = SSW_ITA.1.t #タイトルのlocalisationkey、
+	picture = GFX_report_event_generic_ruins #イベントの画像
+	is_triggered_only = yes #コマンドによって呼び出されることに限定するか
+	fire_only_once = yes #一度だけか
+	desc = SSW_ITA.1.d #内容
+	option = {#選択肢1
+		name = SSW_ITA.1.a #この選択肢のlocalisationkey
+        country_event = {
+    id = SSW_ITA.1 #イベントのid
+	immediate = {#ログ
+		log = "[GetDateText]: [Root.GetName]: event SSW_ITA.1"
+	}
+	title = SSW_ITA.1.t #タイトルのlocalisationkey、
+	picture = GFX_report_event_generic_ruins #イベントの画像
+	is_triggered_only = yes #コマンドによって呼び出されることに限定するか
+	fire_only_once = yes #一度だけか
+	desc = SSW_ITA.1.d #内容
+	option = {#選択肢1
+		name = SSW_ITA.1.a #この選択肢のlocalisationkey
+        trigger = {#選択肢を選ぶ条件
+		has_government = fascism
+	}
+        add_political_power = 25
+    }
+    option = {#選択肢2
+		name = SSW_ITA.1.b #この選択肢のlocalisationkey
+		add_political_power = -25
+	}
+}
+イベントの発生のコマンド
+country_event = {
+id = my_event.1 #発生させるイベントのid、これだけでも機能する
+days = 10 #何日ごにイベントが発生するか 
+random = 10 #days内の何日にイベントが発生するか
+}
+###条件発動するイベント
+country_event = {
+    id = SSW_ITA.1 #イベントのid
+	immediate = {#ログ
+		log = "[GetDateText]: [Root.GetName]: event SSW_ITA.1"
+	}
+	title = SSW_ITA.1.t #タイトルのlocalisationkey、
+    trigger = {#発動する条件
+		has_government = fascism
+	}
+	picture = GFX_report_event_generic_ruins #イベントの画像
+	is_triggered_only = no #コマンドによって呼び出されることに限定するか
+	fire_only_once = yes #一度だけか
+	desc = SSW_ITA.1.d #内容
+	option = {#選択肢1
+		name = SSW_ITA.1.a #この選択肢のlocalisationkey
+		add_political_power = 25
+	}
+    option = {#選択肢2
+		name = SSW_ITA.1.b #この選択肢のlocalisationkey
+		add_political_power = -25
+	}
+}
+基本コピペしてid変えればできる！
+がんばれ！
+wiki参考

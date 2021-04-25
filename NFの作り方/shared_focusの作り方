@@ -1,0 +1,69 @@
+普通、NFを作るときには
+focus_tree = {
+	id = ssw_National_India_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = IND
+		}
+	}
+	default = no
+    focus = {
+		id = #
+		icon = #
+		cost = 10
+		x = 31
+		y = 0
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+}
+と、ツリーの記述の中にフォーカスを記述しますが、このshared_focusは違います。
+shared_focusでは、
+focus_tree = {
+	id = ITA_select_focus #フォーカスのid,あまりかぶらないようなものにしよう
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ITA #国のタグ
+		}
+	}
+	default = no #オリジナルであることを定義
+	shared_focus = ITA_focus_Rome_Conquered #ここ大事。定義するツリーの一番頭の部分のidをここに記述すること
+    shared_focus = #産業ツリー
+}
+###ツリーを定義したものとフォーカスを定義したものは別々のファイルに記述する###
+shared_focus = {
+	id = ITA_focus_Rome_Conquered #大事大事
+	icon = GFX_goal_tfv_strengthen_commonwealth_ties #アイコン
+	cost = 1.40
+	available = {
+	}
+	ai_will_do = {
+	  factor = 5
+   }
+   bypass = {
+   }
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	x = 6
+	y = 0
+	completion_reward = {
+	}
+}
+###shared_focusでは、前提条件のフォーカスを持たない先頭のフォーカスから、それにつながるフォーカスを定義しているため、
+###軍事ツリー、産業ツリーを別々に作る場合、両方の先頭のフォーカスをfocus_treeのshared_focusに記述しないと、
+###国家方針図に表示されなくなります。
+shared_focusを入れ替える際には
+load_focus_tree = {
+    tree = ITA_Balbo_military_Focus #ロードするフォーカス
+     keep_completed = yes #達成度が引き継がれるかどうか
+}
+mark_focus_tree_layout_dirty = yes
+このコマンドを使いましょう。
+wiki参考

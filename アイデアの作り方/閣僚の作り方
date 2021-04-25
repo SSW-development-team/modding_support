@@ -1,0 +1,126 @@
+###政治首班###
+political_leader = {
+    = {#設定する閣僚のタグ。ムッソリーニだったらITA_Benito_Amilcare_Andrea_Mussolini
+　　　　　　　#国家タグ_苗字_名前（アンダーバーを間に入れる）
+       available = {
+                  always = no
+       }
+
+       allowed = {#担当する国家のタグを入れようイタリアならITA
+           tag = 
+       }
+
+       picture =
+       #画像を設定しよう。画像はグラフィックス部門に委託して作ってもらえるよ
+       traits = {  }#特性を入れるオリジナルのものを入れたいなら下の方へ↓
+　　　　　　　　　　　　　　 #バニラのものなら下に特性をまとめておいたサイトを貼っておくよ
+       cancel_if_invalid = no #noにして、history/countriesでアイデアを設定すると、ゲーム開始時にこの閣僚が追加されます。
+   }
+}
+###外務大臣###
+minister_of_foreign_affairs = {
+    = {#設定する閣僚のタグ。ムッソリーニだったらITA_Benito_Amilcare_Andrea_Mussolini
+　　　　　　　#国家タグ_苗字_名前（アンダーバーを間に入れる）
+
+       available = {
+                  always = no
+       }
+
+       allowed = {#担当する国家のタグを入れようイタリアならITA
+           tag = 
+       }
+
+       picture = 
+       #画像を設定しよう。画像はグラフィックス部門に委託して作ってもらえるよ
+       traits = {  }#特性を入れるオリジナルのものを入れたいならしたの方へ↓
+　　　　　　　　　　　　　　 #バニラのものなら下に特性をまとめておいたサイトを貼っておくよ
+       cancel_if_invalid = no　#noにして、history/countriesでアイデアを設定すると、ゲーム開始時にこの閣僚が追加されます。
+   }
+}
+###財務大臣###
+minister_of_finance = {
+    = {#設定する閣僚のタグ。ムッソリーニだったらITA_Benito_Amilcare_Andrea_Mussolini
+　　　　　　　#国家タグ_苗字_名前（アンダーバーを間に入れる）
+       available = {
+                  always = no
+       }
+
+       allowed = {#担当する国家のタグを入れようイタリアならITA
+           tag = 
+       }
+
+       picture =
+       #画像を設定しよう。画像はグラフィックス部門に委託して作ってもらえるよ
+       traits = {  }#特性を入れるオリジナルのものを入れたいなら下の方へ↓
+　　　　　　　　　　　　　　 #バニラのものなら下に特性をまとめておいたサイトを貼っておくよ
+       cancel_if_invalid = no　#noにして、history/countriesでアイデアを設定すると、ゲーム開始時にこの閣僚が追加されます。
+   }
+}
+###内務大臣###
+minister_of_interior = {
+    = {#設定する閣僚のタグ。ムッソリーニだったらITA_Benito_Amilcare_Andrea_Mussolini
+　　　　　　　#国家タグ_苗字_名前（アンダーバーを間に入れる）
+
+       available = {
+                  always = no
+       }
+
+       allowed = {#担当する国家のタグを入れようイタリアならITA
+           tag = 
+       }
+
+       picture = 
+       #画像を設定しよう。画像はグラフィックス部門に委託して作ってもらえるよ
+       traits = {  }#特性を入れるオリジナルのものを入れたいなら下の方へ↓
+　　　　　　　　　　　　　　 #バニラのものなら下に特性をまとめておいたサイトを貼っておくよ
+       cancel_if_invalid = no　#noにして、history/countriesでアイデアを設定すると、ゲーム開始時にこの閣僚が追加されます。
+   }
+}
+###軍需大臣###
+minister_of_army = {
+    = {#設定する閣僚のタグ。ムッソリーニだったらITA_Benito_Amilcare_Andrea_Mussolini
+　　　　　　　#国家タグ_苗字_名前（アンダーバーを間に入れる）
+
+       available = {
+                  always = no
+       }
+
+       allowed = {#担当する国家のタグを入れよう　#イタリアならITA#
+           tag = 
+       }
+
+       picture = 
+       #画像を設定しよう。画像はグラフィックス部門に委託して作ってもらえるよ
+       traits = {   }#特性を入れるオリジナルのものを入れたいなら下の方へ↓
+　　　　　　　　　　　　　　 #バニラのものなら下に特性をまとめておいたサイトを貼っておくよ
+       cancel_if_invalid = no　#noにして、history/countriesでアイデアを設定すると、ゲーム開始時にこの閣僚が追加されます。
+   }
+}
+
+
+###特性の作り方
+leader_traits = {
+Air_Force_founder = {#設定する特性のタグのようなもの
+   random = no　#ランダムで付与されるかだよ。オリジナルのものならno 汎用のものならyesを入れる
+   war_support_factor = 0.10 #modiferを入れようmodiferをまとめられたサイトを下に貼っておくよ
+   experience_gain_air_factor = 0.20
+}
+}
+
+
+
+特性一覧　　　https://hoi4modding.wiki.fc2.com/wiki/人物特性
+
+modifer一覧　　https://w.atwiki.jp/hoi4modtukuritai/pages/18.html
+
+このmodでは閣僚を政治力を支払って変更したりしないから、availableやallowedに書き換えが必要になることがあるよ。
+政体が変わって、イベントなどで閣僚同士を変更したいなら、
+swap_ideas= {
+remove_idea = #いなくなるidea
+add_idea = #追加されるidea
+}
+を使おう！
+
+よくわかんなかったら、githubから日本のデータを見てみるか、これをコピーして、タグとかを変えちゃえばOK
+それでもわからなかったらコーディング部門で聞いてね。
+wiki参考

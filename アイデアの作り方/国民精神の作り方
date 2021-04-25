@@ -1,0 +1,20 @@
+ideas = {#アイデア
+	country = {#国民精神
+		▶️ITA_idea_1 = {#国民精神のID
+			picture = north_south_problem #画像、詳しくは”国民精神の画像の設定の仕方”で
+			allowed = {#このままでオッケー
+				always = no
+			}
+			allowed_civil_war = {#内戦時での有無
+				always = yes
+			}
+			removal_cost = -1 #このままでオッケー
+			modifier = {#アイデアの効果、詳しくは"modifier一覧"で
+				stability_factor = -0.10
+			}
+		}⬅️
+    }
+}
+これをコピペして、IDや効果、画像なんかを変更すれば完成。
+▶ から ⬅️までの範囲をコピーして、⬅️の部分で一行改行してペーストすればきれいにできるよ。
+wiki参考
